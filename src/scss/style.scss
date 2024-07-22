@@ -2,7 +2,7 @@
 
 :root {
   // theme colors
-  --primary-rgb : #{cl(#1B4B9B)};
+  --primary-rgb : #{cl(#0085EA)};
   --sec-rgb     : #{cl(#CE9B44)};
   --blue-rgb    : #{cl(#2173E5)};
   --red-rgb     : #{cl(#c0392b)};
@@ -11,9 +11,9 @@
 
   // colors
   --bg1-rgb     : #{cl(#ededed)};
-  --bg2-rgb     : #{cl(#F5F7FB)};
+  --bg2-rgb     : #{cl(#F3F5F9)};
   --bg3-rgb     : #{cl(#fff)};
-  --default-rgb : #{cl(#373737)};
+  --default-rgb : #{cl(#2B2B2B)};
   --white-rgb   : #{cl(#fff)};
   --black-rgb   : #{cl(#000)};
 
@@ -103,4 +103,57 @@ body {
     }
   }
 
+  .btn {
+    border-radius: 8px;
+  }
+
+  .btn-fill {
+    background:
+      radial-gradient(100% 100% at 50% 0%, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 73.05%), var(--tw-btn-color) !important;
+
+  }
+}
+
+.hero {
+  display  : flex;
+  flex-grow: 1;
+  position : relative;
+
+  &-content {
+    width         : 50%;
+    display       : flex;
+    flex-direction: column;
+    align-items   : flex-start;
+
+    @media (max-width: theme('screens.lg')) {
+      width: 100%;
+    }
+  }
+
+  &-title {
+    font-size    : 48px;
+    font-weight  : 600;
+    margin-bottom: 40px;
+
+    @media (max-width: theme('screens.lg')) {
+      font-size: 42px;
+    }
+
+    @media (max-width: theme('screens.sm')) {
+      font-size    : 32px;
+      margin-bottom: 24px;
+    }
+  }
+
+  &-image {
+    position: absolute;
+    right   : 0;
+    top     : 0;
+    width   : calc(50% - 100px);
+    height  : 100%;
+
+    @media (max-width: theme('screens.lg')) {
+      display: none;
+    }
+  }
 }

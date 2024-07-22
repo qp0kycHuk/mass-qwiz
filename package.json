@@ -53,6 +53,7 @@
   },
   "dependencies": {
     "@fancyapps/ui": "^4.0.27",
+    "@qpokychuk/okta-neue": "^1.0.2",
     "@qpokychuk/ripple": "^1.5.6",
     "@qpokychuk/sf-pro-display": "^1.0.2",
     "gsap": "^3.12.2",

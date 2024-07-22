@@ -50,7 +50,7 @@ module.exports = {
       default: withOpacity('--default-rgb'),
     },
     fontFamily: {
-      base: "'SF Pro Display', arial, helvetica, sans-serif",
+      base: "'Okta Neue', arial, helvetica, sans-serif",
     },
     zIndex: [0, 321, 322, 323, 324, 325, 326, 327, 328, 329, 'auto'],
     extend: {

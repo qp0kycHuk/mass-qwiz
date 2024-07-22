@@ -1,5 +1,57 @@
 <%= require('./html-includes/header.html')() %>
 
-<div class="doc"></div>
+<section class="hero">
+  <div class="hero-content">
+    <div class="grid items-center gap-5 sm:gap-8 grid-cols-2 xs:grid-cols-3 ">
+      <div><img src="img/partner/1.png" alt=""></div>
+      <div><img src="img/partner/2.png" alt=""></div>
+      <!-- <div><img src="img/partner/1.png" alt=""></div> -->
+      <!-- <div><img src="img/partner/2.png" alt=""></div> -->
+    </div>
+    <div class="mt-10 lg:my-auto">
+      <div class="hero-title">ЖК «Nova Vita»</div>
+      <div class="flex items-center gap-2 mb-6 sm:mb-10">
+        <c-icon class="icon text-2xl text-primary" href="img/icons.svg#map-point"></c-icon>
+        <div class="text-lg font-semibold">г. Краснодар</div>
+      </div>
+      <button class="btn btn-primary btn-fill btn-[60px] mb-6 lg:hidden max-sm:w-full">
+        <span class="text-lg font-semibold">Подобрать квартиру</span>
+      </button>
+
+      <div class="ratio ratio-1/1 max-w-96 mb-6 lg:hidden">
+        <img src="img/hero.jpg" alt="" class="absolute-fit object-cover">
+
+      </div>
+
+      <div class="sm:text-lg leading-normal">
+        В шаговой доступности имеются детские сады и школы . Рядом торговые центры, аптеки, магазины. Прямо во дворе жилого комплекса есть безопасные, комфортные игровые зоны для детей, спортивные площадки и беседки для отдыха.
+      </div>
+      <div class="mt-6 sm:mt-10 flex flex-col gap-4">
+        <div class="flex items-center gap-3">
+          <c-icon class="icon text-2xl" href="img/icons.svg#wallet"></c-icon>
+          <div class="sm:text-lg font-semibold">Квартиры от 15 214 руб./мес</div>
+        </div>
+        <div class="flex items-center gap-3">
+          <c-icon class="icon text-2xl" href="img/icons.svg#sale"></c-icon>
+          <div class="sm:text-lg font-semibold">Ипотека от 6% на весь срок</div>
+        </div>
+        <div class="flex items-center gap-3">
+          <c-icon class="icon text-2xl" href="img/icons.svg#building"></c-icon>
+          <div class="sm:text-lg font-semibold">Квартиры с ремонтом</div>
+        </div>
+      </div>
+      <button class="btn btn-primary btn-fill btn-[68px] mt-10 max-lg:hidden">
+        <span class="text-lg font-semibold">Подобрать квартиру</span>
+      </button>
+      <div class="mt-6 sm:mt-10 font-semibold text-lg sm:text-xl">
+        ИНН 543315860406 / <br class="sm:hidden">
+        ОГРН 320237500259789
+      </div>
+    </div>
+  </div>
+  <div class="hero-image">
+    <img src="img/hero.jpg" alt="" class="absolute-fit object-cover">
+  </div>
+</section>
 
 <%= require('./html-includes/footer.html')() %>
