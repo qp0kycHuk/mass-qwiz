@@ -1,0 +1,118 @@
+<%= require('./html-includes/header.html')() %>
+
+<section class="flex grow items-center justify-center">
+  <div class="w-full">
+    <div class="qwiz">
+      <form class="qwiz-slider swiper">
+        <div class="swiper-wrapper">
+          <!-- Обычный слайд -->
+          <div class="swiper-slide qwiz-slide">
+            <div class="text-1.5xl sm:text-3.5xl font-semibold mb-8 sm:mb-10">Какой тип квартиры Вас интересует?</div>
+
+            <div class="grid sm:grid-cols-2 gap-2 sm:gap-4">
+              <% for(let i = 0; i < 3; i++) { %>
+              <label class="qwiz-checkbox">
+                <input type="radio" hidden name="q-1">
+                <div class="flex items-center py-5 px-6">
+                  <div class="sm:text-lg">Квартира-студия</div>
+                  <c-icon class="icon ml-auto qwiz-checkbox-icon" href="img/icons.svg#gal-ochka"></c-icon>
+                </div>
+              </label>
+              <% } %>
+            </div>
+
+            <div class="mt-8"></div>
+            <div class="flex gap-4 mt-auto">
+              <button class="btn btn-[#DADADA] btn-fill btn-[68px] sm:px-15 max-sm:w-full qwiz-prev">
+                <span class="font-medium text-lg">Назад</span>
+              </button>
+              <button class="btn btn-primary btn-fill btn-[68px] sm:px-15 max-sm:w-full qwiz-next">
+                <span class="font-medium text-lg">Дальше</span>
+              </button>
+            </div>
+          </div>
+          <!-- Слайд с картинками -->
+          <div class="swiper-slide qwiz-slide">
+            <div class="text-1.5xl sm:text-3.5xl font-semibold mb-8 sm:mb-10">Какой тип квартиры Вас интересует?</div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+              <% for(let i = 0; i < 3; i++) { %>
+              <label class="qwiz-checkbox">
+                <input type="checkbox" hidden>
+                <div class="ratio ratio-[368/174]">
+                  <img src="img/test.jpg" alt="" class="absolute-fit object-cover">
+                </div>
+                <div class="flex items-center p-3 sm:py-5 sm:px-6 grow">
+                  <div class="sm:text-lg">Квартира-студия</div>
+                  <c-icon class="icon ml-auto qwiz-checkbox-icon max-sm:hidden" href="img/icons.svg#gal-ochka"></c-icon>
+                </div>
+              </label>
+              <% } %>
+            </div>
+
+            <div class="mt-8"></div>
+            <div class="flex gap-4 mt-auto">
+              <button class="btn btn-[#DADADA] btn-fill btn-[68px] sm:px-15 max-sm:w-full qwiz-prev">
+                <span class="font-medium text-lg">Назад</span>
+              </button>
+              <button class="btn btn-primary btn-fill btn-[68px] sm:px-15 max-sm:w-full qwiz-next">
+                <span class="font-medium text-lg">Дальше</span>
+              </button>
+            </div>
+          </div>
+          <!-- Контакт -->
+          <div class="swiper-slide qwiz-slide">
+            <div class="text-1.5xl sm:text-3.5xl font-semibold mb-8 sm:mb-10">
+              Получите подборку квартир от застройщика <br>
+              с планировками и действующими акциями
+            </div>
+
+            <label class="block">
+              <div class="mb-2">
+                <span class="font-semibold">Номер телефона</span> <br class="sm:hidden"> для получения подборки выбранным способом *
+              </div>
+              <input type="tel" required class="input rounded-lg input-[68px] w-[560px] max-w-full" placeholder="+7 ( _ _ _ ) _ _ _ - _ _ - _ _">
+            </label>
+            <div class="mt-6 text-xs opacity-40">
+              Отправляя форму, Вы даете согласие на обработку Ваших персональных данных
+            </div>
+
+            <div class="mt-8"></div>
+            <div class="flex gap-4 mt-auto">
+              <button class="btn btn-primary btn-fill btn-[68px] sm:px-15 max-sm:w-full ">
+                <span class="font-medium text-lg">Получить подборку</span>
+              </button>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+  </div>
+</section>
+<script>
+  (() => {
+    const slider = new Swiper('.qwiz-slider', {
+      slidesPerView: 1,
+      spaceBetween: 64,
+      speed: 500,
+      touchRatio: 0,
+      navigation: {
+        prevEl: '.qwiz-prev',
+        nextEl: '.qwiz-next'
+      }
+    })
+
+    const qwiz = new Qwiz(document.querySelector('.qwiz'), slider)
+    qwiz.init()
+
+    document.addEventListener('change', (e) => {
+      if (e.target.closest('.qwiz-checkbox') && e.target.checked) {
+        setTimeout(() => {
+          slider.slideNext()
+        }, 150)
+      }
+    })
+  })();
+</script>
+
+<%= require('./html-includes/footer.html')() %>

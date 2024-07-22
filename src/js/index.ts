@@ -11,7 +11,10 @@ import ymaps from './ymaps'
 import animations from './animations'
 
 import '../scss/index.scss'
+import Qwiz from './qwiz'
 
+// @ts-ignore
+window.Qwiz = Qwiz
 window.addEventListener('DOMContentLoaded', () => loadHandler())
 
 function loadHandler() {
